@@ -1,0 +1,7 @@
+<div>Items in chart:{{itemsNumberInChart()}} <button *ngIf="itemsNumberInChart()!==0" (click)="changeVisibilityOfItemsInChart()">{{visibleProducts?"Hide chart":"Show chart"}}</button></div>
+<div *ngIf="visibleProducts"></div>
+<div>
+    <div *ngFor="let item of chartItemsList ()">
+        {{item.name}}, {{item.amount}}
+    </div>
+</div>

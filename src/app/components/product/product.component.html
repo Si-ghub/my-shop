@@ -1,0 +1,11 @@
+<div>
+    <h4>
+        <img [src]="item?.img" alt="img">
+        {{item?.name}}
+        <div>Product price: {{item?.price}} eur</div>
+        <div>Add:{{item?.amount}}</div>
+        <button (click)="item?.addToChart()">+</button>
+        <button (click)="item?.removeFromChart()" [disabled]="!item?.inChart()">-</button>
+        <hr>
+    </h4>
+</div>
