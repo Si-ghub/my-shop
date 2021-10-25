@@ -6,14 +6,14 @@ export class Product {
         public img?: string
     ) { }
 
-    public addToChart(): void {
-        this.amount++
+    public addToCart(): void {
+        this.amount++;
     }
 
-    public removeFromChart(): void {
-        this.amount--
+    public removeFromCart(): void {
+        this.amount--;
     }
-    public inChart(): boolean {
+    public inCart(): boolean {
         if (this.amount > 0) {
             return true;
         } else {

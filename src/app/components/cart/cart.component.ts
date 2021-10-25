@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 
 @Component({
-  selector: 'app-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss']
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss']
 })
-export class ChartComponent implements OnInit {
+export class CartComponent implements OnInit {
   @Input()
   public allProducts?: Product[];
   public visibleProducts: boolean = true;
@@ -15,26 +15,26 @@ export class ChartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public itemsNumberInChart(): number {
+  public itemsNumberInCart(): number {
     let amount = 0;
     this.allProducts?.forEach((product) => {
       amount += product.amount;
     })
     return amount;
-  };
+  }
 
-  public chartItemsList(): Product[] {
-    const chartItems: Product[] = [];
+  public cartItemsList(): Product[] {
+    const cartItems: Product[] = [];
     this.allProducts?.forEach((product) => {
       if (product.amount > 0) {
-        chartItems.push(product);
+        cartItems.push(product);
       }
     })
-    return chartItems;
-  };
+    return cartItems;
+  }
 
-  public changeVisibilityOfItemsInChart() {
+  public changeVisibilityOfItemsInCart() {
     this.visibleProducts = !this.visibleProducts
-  };
+  }
 
 }
